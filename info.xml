@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<extension key="au.joanne.accountcodesummary" type="module">
+  <file>accountcodesummary</file>
+  <name>contributions by account code</name>
+  <description>groups by account code over the specified time period and provides a grand total. </description>
+  <license>FIXME</license>
+  <maintainer>
+    <author>joanne</author>
+    <email>j_chester at optusnet dot com</email>
+  </maintainer>
+  <releaseDate>2013-11-03</releaseDate>
+  <version>1.0</version>
+  <develStage>alpha</develStage>
+  <compatibility>
+    <ver>4.2</ver>
+  </compatibility>
+  <comments>This is a new, undeveloped module</comments>
+  <civix>
+    <namespace>CRM/Accountcodesummary</namespace>
+  </civix>
+</extension>
