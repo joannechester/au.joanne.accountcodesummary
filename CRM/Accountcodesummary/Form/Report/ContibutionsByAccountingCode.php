@@ -61,8 +61,8 @@ class CRM_Accountcodesummary_Form_Report_ContibutionsByAccountingCode extends CR
           ),
         ),
         'grouping' => 'contact-fields',
-       
-		'filters' =>
+
+    'filters' =>
         array(
           'sort_name' =>
           array('title' => ts('Contact Name'),
@@ -81,7 +81,7 @@ class CRM_Accountcodesummary_Form_Report_ContibutionsByAccountingCode extends CR
         ),
         'grouping' => 'contact-fields',
       ),
-      
+
       'civicrm_membership' =>
       array(
         'dao' => 'CRM_Member_DAO_Membership',
@@ -94,7 +94,21 @@ class CRM_Accountcodesummary_Form_Report_ContibutionsByAccountingCode extends CR
           ),
         ),
       ),
-      
+      'credit_1' => array(
+        'name' => 'civicrm_financial_account',
+        'alias' => 'credit_1',
+        'group_bys' => array(
+          'credit_accounting_code' => array(
+            'title' => ts('Financial Account Code - Credit'),
+            'name'  => 'accounting_code',
+            'alias' => 'financial_account_civireport_credit_1',
+          ),
+         'credit_name' => array(
+           'title' => ts('Financial Account Name - Credit'),
+           'name'  => 'name',
+           'alias' => 'financial_account_civireport_credit_1',
+      ),),
+      ),
       'civicrm_financial_account' => array(
         'dao' => 'CRM_Financial_DAO_FinancialAccount',
         'fields' => array(
@@ -123,35 +137,21 @@ class CRM_Accountcodesummary_Form_Report_ContibutionsByAccountingCode extends CR
             'default' => TRUE,
           ),
         ),
-        
-        
+
+
         'group_bys' =>
         array(
-		  'debit_accounting_code' => array(
+      'debit_accounting_code' => array(
             'title' => ts('Financial Account Code - Debit'),
             'name'  => 'accounting_code',
             'alias' => 'financial_account_civireport_debit',
-		  ),
-		  
-          'credit_accounting_code' => array(
-            'title' => ts('Financial Account Code - Credit'),
-             'name'  => 'accounting_code',
-            'alias' => 'financial_account_civireport_credit',
-            ),
+      ),
           'debit_name' => array(
-            'title' => ts('Financial Account Name - Debit'), 
+            'title' => ts('Financial Account Name - Debit'),
             'name'  => 'name',
             'alias' => 'financial_account_civireport_debit',
-		  ),
-          'credit_name' => array(
-            'title' => ts('Financial Account Name - Credit'),
-            'name'  => 'name',
-            'alias' => 'financial_account_civireport_credit',
-		  ),
-		),
-        
-        
-        
+      ),
+    ),
         'filters' => array(
           'debit_accounting_code' => array(
             'title' => ts('Financial Account Code - Debit'),
@@ -178,9 +178,9 @@ class CRM_Accountcodesummary_Form_Report_ContibutionsByAccountingCode extends CR
             'options' => CRM_Contribute_PseudoConstant::financialAccount(),
           ),
         ),
-        
-        
-        
+
+
+
       ),
       'civicrm_line_item' => array(
         'dao' => 'CRM_Price_DAO_LineItem',
@@ -189,7 +189,7 @@ class CRM_Accountcodesummary_Form_Report_ContibutionsByAccountingCode extends CR
             'default' => TRUE,
           ),
         ),
-        
+
         'filters' => array(
           'financial_type_id' => array(
             'title' => ts('Financial Type'),
